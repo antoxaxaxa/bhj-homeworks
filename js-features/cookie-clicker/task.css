@@ -1,0 +1,9 @@
+.clicker__cookie{
+    width: 40%;
+    height: 40%;
+    transition: transform 0.3s ease-in-out;
+
+}
+.zoomed{
+    transform: scale(1.2) translateY(10px);
+}
