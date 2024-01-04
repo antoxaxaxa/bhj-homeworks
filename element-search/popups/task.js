@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function(x) {
     document.addEventListener("click", function (x) {
         if (x.target.classList.contains("modal__close")) {
             let modalId = x.target.closest(".modal").id;
+            //console.log(modalId);
             if (modalId === "modal_success") {
                 closeModal(modalId);
             }
