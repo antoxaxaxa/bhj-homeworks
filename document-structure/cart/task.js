@@ -28,20 +28,20 @@ document.addEventListener('DOMContentLoaded', function () {
         let imageSrc = productElement.querySelector(".product__image").getAttribute("src");
         let productCount = parseInt(productElement.querySelector(".product__quantity-value").textContent);
 
-        // Ищем элемент корзины с таким же изображением
+
         let existingCartProduct = findCartProductByImage(imageSrc);
 
         if (existingCartProduct) {
-            // Если продукт уже в корзине, увеличиваем количество
+
             let cartProductCount = existingCartProduct.querySelector(".cart__product-count");
             summaPerProduct[imageSrc] += productCount;
             cartProductCount.textContent = summaPerProduct[imageSrc];
         } else {
-            // Создаем элемент для корзины
+
             let cartProduct = document.createElement("div");
             cartProduct.classList.add("cart__product");
 
-            // Добавляем изображение в элемент корзины
+
             let cartProductImage = document.createElement("img");
             cartProductImage.classList.add("cart__product-image");
             cartProductImage.setAttribute('src', imageSrc);
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             cartProduct.appendChild(cartProductCount);
 
-            // Добавляем элемент корзины в корзину
+
             let cart = document.querySelector(".cart");
             cart.appendChild(cartProduct);
         }
@@ -89,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Вызываете функции, чтобы они начали работу
     addToCartHandler();
     minus();
     plus();
