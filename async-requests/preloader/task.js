@@ -14,11 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Функция для отображения данных на странице
-    function displayData(data) {
-        items.innerHTML = ""; // Очищаем контейнер перед добавлением новых данных
 
-        // Перебираем объект Valute и создаем элементы для отображения данных
+    function displayData(data) {
+        items.innerHTML = "";
+
         for (const key in data.response.Valute) {
             const valute = data.response.Valute[key];
 
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
             itemCurrency.classList.add("item__currency");
             itemCurrency.textContent = "руб.";
 
-            // Добавляем созданные элементы в контейнер
             itemContainer.appendChild(itemCode);
             itemContainer.appendChild(itemValue);
             itemContainer.appendChild(itemCurrency);
@@ -46,11 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        // Скрываем анимацию загрузки
+
         loader.classList.remove("loader_active");
     }
 
-    // Отправляем запрос и обрабатываем данные
     fetchData()
         .then(displayData)
 
