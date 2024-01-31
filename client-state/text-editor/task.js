@@ -18,5 +18,4 @@ document.addEventListener("DOMContentLoaded", function () {
         const savedText = localStorage.getItem('editorText');
         editor.value = savedText;
     }
-
 });
